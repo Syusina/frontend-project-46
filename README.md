@@ -10,3 +10,6 @@ Step 3. Asciinema.
 
 Step 6. Asciinema.
 <a href="https://asciinema.org/a/RYQ4CFlnNVSNl7cqfigdVtVXf" target="_blank"><img src="https://asciinema.org/a/RYQ4CFlnNVSNl7cqfigdVtVXf.svg" /></a>
+
+Step 7. Asciinema.
+<a href="https://asciinema.org/a/yx6Js6AQMhaM6s9YblLUYnkM5" target="_blank"><img src="https://asciinema.org/a/yx6Js6AQMhaM6s9YblLUYnkM5.svg" /></a>

@@ -3,10 +3,8 @@ import yaml from 'js-yaml';
 const parser = (content, format) => {
   if (format === '.json') {
     return JSON.parse(content);
-  } else if (format === '.yml') {
-    return yaml.load(content);
   }
-  else if (format === '.ymal') {
+  if (format === '.yml' || format === '.yaml') {
     return yaml.load(content);
   }
 };

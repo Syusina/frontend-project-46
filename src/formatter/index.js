@@ -5,10 +5,7 @@ const checkFormat = (tree, format) => {
   if (format === '.json') {
     return JSON.stringify(tree);
   }
-  if (format === '.yml') {
-    return plain(tree);
-  }
-  if (format === '.yaml') {
+  if (format === 'plain') {
     return plain(tree);
   }
   if (format === 'stylish') {

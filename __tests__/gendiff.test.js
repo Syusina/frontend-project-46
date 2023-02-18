@@ -15,21 +15,25 @@ test('gendiff-JSON', () => {
 });
 
 test('gendiff-YML', () => {
-  expect(genDiff(getFixturePath('file1.yml'), getFixturePath('file2.yml'), '.yml')).toBe(readFile('expect-YML.txt'));
-});
-
-test('gendiff-YAML', () => {
-  expect(genDiff(getFixturePath('file1.yml'), getFixturePath('file2.yml'), '.yaml')).toBe(readFile('expect-YML.txt'));
+  expect(genDiff(getFixturePath('file1.yml'), getFixturePath('file2.yml'), 'plain')).toBe(readFile('expect-YML.txt'));
 });
 
 test('gendiff-stylish', () => {
   expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'), 'stylish')).toBe(readFile('expect-stylish.txt'));
 });
 
-test('gendiff-no-format', () => {
+test('gendiff-JSON-no-format', () => {
   expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'))).toBe(readFile('expect-stylish.txt'));
 });
 
-test('gendiff-YAML', () => {
-  expect(genDiff(getFixturePath('file1.yml'), getFixturePath('file2.yml'), '.yaml')).toBe(readFile('expect-YML.txt'));
+test('gendiff-YAML-no-format', () => {
+  expect(genDiff(getFixturePath('file1.yml'), getFixturePath('file2.yml'))).toBe(readFile('expect-stylish.txt'));
+});
+
+test('gendiff-YAML-JSON', () => {
+  expect(genDiff(getFixturePath('file1.yml'), getFixturePath('file2.json'), 'plain')).toBe(readFile('expect-YML.txt'));
+});
+
+test('gendiff-YAML-no-format', () => {
+  expect(genDiff(getFixturePath('file1.yml'), getFixturePath('file2.yml'), '.json')).toBe(readFile('expect-JSON.txt'));
 });

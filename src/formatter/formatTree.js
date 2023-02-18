@@ -23,10 +23,10 @@ const stylish = (tree) => {
       if (val.type === 'added') {
         return `${getIndent(depth)}+ ${val.name}: ${stringify(val.value, depth + 1)}`;
       }
-      if (val.type === 'deleted') {
+      if (val.type === 'removed') {
         return `${getIndent(depth)}- ${val.name}: ${stringify(val.value, depth + 1)}`;
       }
-      if (val.type === 'change') {
+      if (val.type === 'update') {
         const first = `${getIndent(depth)}- ${val.name}: ${stringify(val.value1, depth + 1)}`;
         const second = `${getIndent(depth)}+ ${val.name}: ${stringify(val.value2, depth + 1)}`;
         return `${first}\n${second}`;

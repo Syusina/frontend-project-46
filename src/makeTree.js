@@ -22,14 +22,14 @@ const makeTree = (file1, file2) => {
     }
     if (!_.has(file2, key)) {
       return {
-        type: 'deleted',
+        type: 'removed',
         name: key,
         value: file1[key],
       }
     }
     if (!_.isEqual(file1[key], file2[key])) {
       return {
-        type: 'change',
+        type: 'update',
         name: key,
         value1: file1[key],
         value2: file2[key],

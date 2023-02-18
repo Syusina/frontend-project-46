@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 import makeTree from './makeTree.js';
 import path from 'node:path';
 import parser from './parsers.js';
-import checkFormat from './formatter/checkFormat.js';
+import checkFormat from './formatter/index.js';
 
 // определяем формат по расширению
 const fileFormat = (file) => {
@@ -22,7 +22,7 @@ const dataFile = (filepath) => {
   const content = fileContent(filepath);
   const parsedFile = parser(content, format);
   return parsedFile; 
-}
+};
 
 // объединяем в главную функцию
 const genDiff = (filepath1, filepath2, format = 'stylish') => {
