@@ -1,15 +1,23 @@
+---
+
+plugins:
+  # https://github.com/jest-community/eslint-plugin-jest
+  - jest
+
+# https://eslint.org/docs/user-guide/configuring#specifying-environments
 env:
-  browzer: true
-  es2021: true
-extends: 
+  node: true
+
+extends:
   - 'airbnb-base'
-overrides: []
+  - 'plugin:jest/recommended'
+
 parserOptions:
   ecmaVersion: latest
-  sourseType: module
+
 rules:
   no-console: 0
-  import/extensions:
+  import/extensions: # FIXME: remove when rule will be adjusted for new nodejs version
     - error
     - ignorePackages
     - js: always

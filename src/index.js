@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
-import makeTree from './makeTree.js';
 import path from 'node:path';
+import makeTree from './makeTree.js';
 import parser from './parsers.js';
 import checkFormat from './formatter/index.js';
 
@@ -21,7 +21,7 @@ const dataFile = (filepath) => {
   const format = fileFormat(filepath);
   const content = fileContent(filepath);
   const parsedFile = parser(content, format);
-  return parsedFile; 
+  return parsedFile;
 };
 
 // объединяем в главную функцию

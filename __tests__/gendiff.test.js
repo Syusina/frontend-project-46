@@ -2,7 +2,7 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import path from 'node:path';
 import { readFileSync } from 'fs';
-import genDiff from "../src";
+import genDiff from '../src/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -26,14 +26,26 @@ test('gendiff-JSON-no-format', () => {
   expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'))).toBe(readFile('expect-stylish.txt'));
 });
 
-test('gendiff-YAML-no-format', () => {
+test('gendiff-YML-no-format', () => {
   expect(genDiff(getFixturePath('file1.yml'), getFixturePath('file2.yml'))).toBe(readFile('expect-stylish.txt'));
 });
 
-test('gendiff-YAML-JSON', () => {
+test('gendiff-YML-JSON', () => {
   expect(genDiff(getFixturePath('file1.yml'), getFixturePath('file2.json'), 'plain')).toBe(readFile('expect-YML.txt'));
 });
 
-test('gendiff-YAML-no-format', () => {
+test('gendiff-YML-json', () => {
   expect(genDiff(getFixturePath('file1.yml'), getFixturePath('file2.yml'), '.json')).toBe(readFile('expect-JSON.txt'));
+});
+
+test('gendiff-YAML-plane', () => {
+  expect(genDiff(getFixturePath('file3.yaml'), getFixturePath('file4.yaml'), 'plain')).toBe(readFile('expect-YML.txt'));
+});
+
+test('gendiff-YAML-stylish', () => {
+  expect(genDiff(getFixturePath('file3.yaml'), getFixturePath('file4.yaml'), 'stylish')).toBe(readFile('expect-stylish.txt'));
+});
+
+test('gendiff-YAML-json', () => {
+  expect(genDiff(getFixturePath('file3.yaml'), getFixturePath('file4.yaml'), '.json')).toBe(readFile('expect-JSON.txt'));
 });

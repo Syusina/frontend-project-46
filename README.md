@@ -13,3 +13,6 @@ Step 6. Asciinema.
 
 Step 7. Asciinema.
 <a href="https://asciinema.org/a/yx6Js6AQMhaM6s9YblLUYnkM5" target="_blank"><img src="https://asciinema.org/a/yx6Js6AQMhaM6s9YblLUYnkM5.svg" /></a>
+
+Step 8. Asciinema
+[![asciicast](https://asciinema.org/a/IfivgJG6J2dlLS7W3mozEKDJZ.svg)](https://asciinema.org/a/IfivgJG6J2dlLS7W3mozEKDJZ)

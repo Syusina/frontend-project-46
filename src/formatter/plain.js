@@ -1,13 +1,11 @@
-import _ from 'lodash';
-
 const checkUnnested = (node) => {
-  if (typeof(node) === 'null') {
+  if (node === null) {
     return null;
   }
-  if (typeof(node) === 'object' && node !== null) {
+  if (typeof (node) === 'object' && node !== null) {
     return '[complex value]';
   }
-  if (typeof(node) === 'string') {
+  if (typeof (node) === 'string') {
     return `'${node}'`;
   }
   return node;
@@ -28,11 +26,9 @@ const plain = (value) => {
       if (val.type === 'update') {
         return `Property '${format}${val.name}' was updated. From ${checkUnnested(val.value1)} to ${checkUnnested(val.value2)}`;
       }
-      if (val.type === 'unchange') {
         return [];
-      }
-     });
-     return result.join('\n');
+    });
+    return result.join('\n');
   };
   return iter(value, '');
 };

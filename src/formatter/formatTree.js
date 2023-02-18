@@ -2,7 +2,7 @@ const replacer = ' ';
 const getIndent = (depth) => replacer.repeat(depth * 4 - 2);
 
 const stringify = (data, depth = 1) => {
-  if (typeof (data) !== 'object' || data === null) {  
+  if (typeof (data) !== 'object' || data === null) {
     return `${String(data)}`;
   }
   const arrEntries = Object.entries(data);
@@ -31,13 +31,11 @@ const stylish = (tree) => {
         const second = `${getIndent(depth)}+ ${val.name}: ${stringify(val.value2, depth + 1)}`;
         return `${first}\n${second}`;
       }
-      if (val.type === 'unchange') {
-        return `${getIndent(depth)}  ${val.name}: ${stringify(val.value, depth + 1)}`;
-      }
+      return `${getIndent(depth)}  ${val.name}: ${stringify(val.value, depth + 1)}`;
     });
     const result = ['{', ...lines, `${lastIndent}}`].join('\n');
     return result;
-  }
+  };
   return iter(tree, 1);
 };
 export default stylish;

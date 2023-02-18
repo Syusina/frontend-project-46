@@ -1,5 +1,5 @@
-import plain from "./plain.js";
-import stylish from "./formatTree.js";
+import plain from './plain.js';
+import stylish from './formatTree.js';
 
 const checkFormat = (tree, format) => {
   if (format === '.json') {
@@ -8,9 +8,7 @@ const checkFormat = (tree, format) => {
   if (format === 'plain') {
     return plain(tree);
   }
-  if (format === 'stylish') {
-    return stylish(tree);
-  }
+  return stylish(tree);
 };
 
 export default checkFormat;
