@@ -3,7 +3,7 @@
 
 <a href="https://codeclimate.com/github/Syusina/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/fdd4e9bee54f0e5ad205/maintainability" /></a>
 
-<a href="https://codeclimate.com/github/Syusina/frontend-project-44/test_coverage"><img src="https://api.codeclimate.com/v1/badges/fdd4e9bee54f0e5ad205/test_coverage" /></a>
+<a href="https://codeclimate.com/github/Syusina/frontend-project-46/test_coverage"><img src="https://api.codeclimate.com/v1/badges/15108a03c40a3659513b/test_coverage" /></a>
 
 [![GitHub Actions Demo](https://github.com/Syusina/frontend-project-46/actions/workflows/github-actions-demo.yml/badge.svg)](https://github.com/Syusina/frontend-project-46/actions/workflows/github-actions-demo.yml)
 
