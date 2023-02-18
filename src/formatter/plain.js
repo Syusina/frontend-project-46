@@ -26,7 +26,7 @@ const plain = (value) => {
       if (val.type === 'update') {
         return `Property '${format}${val.name}' was updated. From ${checkUnnested(val.value1)} to ${checkUnnested(val.value2)}`;
       }
-        return [];
+      return [];
     });
     return result.join('\n');
   };

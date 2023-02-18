@@ -1,5 +1,4 @@
 import yaml from 'js-yaml';
-import _ from 'lodash';
 
 const parser = (content, format) => {
   if (format === '.json') {
@@ -8,6 +7,7 @@ const parser = (content, format) => {
   if (format === '.yml' || format === '.yaml') {
     return yaml.load(content);
   }
+  return `Format not supported`;
 };
 
 export default parser;
