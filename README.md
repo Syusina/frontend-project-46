@@ -5,6 +5,8 @@
 
 <a href="https://codeclimate.com/github/Syusina/frontend-project-44/test_coverage"><img src="https://api.codeclimate.com/v1/badges/fdd4e9bee54f0e5ad205/test_coverage" /></a>
 
+[![GitHub Actions Demo](https://github.com/Syusina/frontend-project-46/actions/workflows/github-actions-demo.yml/badge.svg)](https://github.com/Syusina/frontend-project-46/actions/workflows/github-actions-demo.yml)
+
 Step 3. Asciinema.
 <a href="https://asciinema.org/a/DEiEH8SNbEznfedFDLVo87zOo" target="_blank"><img src="https://asciinema.org/a/DEiEH8SNbEznfedFDLVo87zOo.svg" /></a>
 
