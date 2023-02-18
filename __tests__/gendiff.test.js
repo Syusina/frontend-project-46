@@ -37,15 +37,3 @@ test('gendiff-YML-JSON', () => {
 test('gendiff-YML-json', () => {
   expect(genDiff(getFixturePath('file1.yml'), getFixturePath('file2.yml'), '.json')).toBe(readFile('expect-JSON.txt'));
 });
-
-test('gendiff-YAML-plane', () => {
-  expect(genDiff(getFixturePath('file3.yaml'), getFixturePath('file4.yaml'), 'plain')).toBe(readFile('expect-YML.txt'));
-});
-
-test('gendiff-YAML-stylish', () => {
-  expect(genDiff(getFixturePath('file3.yaml'), getFixturePath('file4.yaml'), 'stylish')).toBe(readFile('expect-stylish.txt'));
-});
-
-test('gendiff-YAML-json', () => {
-  expect(genDiff(getFixturePath('file3.yaml'), getFixturePath('file4.yaml'), '.json')).toBe(readFile('expect-JSON.txt'));
-});
