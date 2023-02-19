@@ -38,6 +38,10 @@ test('gendiff-YML-json', () => {
   expect(genDiff(getFixturePath('file1.yaml'), getFixturePath('file2.yml'), 'json')).toBe(readFile('expect-JSON.txt'));
 });
 
-test('gendiff-js', () => {
+test('gendiff-format-js', () => {
   expect(genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'), 'js')).toBe('Type is not supported');
+});
+
+test('gendiff-file-js', () => {
+  expect(genDiff(getFixturePath('file1.js'), getFixturePath('file2.json'), 'js')).toBe('Type is not supported');
 });
