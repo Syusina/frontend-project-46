@@ -17,24 +17,20 @@ const stylish = (tree) => {
     const lastIndent = depth === 1 ? '' : `${getIndent(depth - 1)}  `;
     const arrValue = Object.values(currentValue);
     const lines = arrValue.map((val) => {
-      if (val.type === 'nested') {
-        return `${getIndent(depth)}  ${val.name}: ${iter(val.children, depth + 1)}`;
+      switch (val.type) {
+        case 'nested':
+          return `${getIndent(depth)}  ${val.name}: ${iter(val.children, depth + 1)}`;
+        case 'added':
+          return `${getIndent(depth)}+ ${val.name}: ${stringify(val.value, depth + 1)}`;
+        case 'removed':
+          return `${getIndent(depth)}- ${val.name}: ${stringify(val.value, depth + 1)}`;
+        case 'update':
+          return `${getIndent(depth)}- ${val.name}: ${stringify(val.value1, depth + 1)}\n${getIndent(depth)}+ ${val.name}: ${stringify(val.value2, depth + 1)}`;
+        default:
+          return `${getIndent(depth)}  ${val.name}: ${stringify(val.value, depth + 1)}`;
       }
-      if (val.type === 'added') {
-        return `${getIndent(depth)}+ ${val.name}: ${stringify(val.value, depth + 1)}`;
-      }
-      if (val.type === 'removed') {
-        return `${getIndent(depth)}- ${val.name}: ${stringify(val.value, depth + 1)}`;
-      }
-      if (val.type === 'update') {
-        const first = `${getIndent(depth)}- ${val.name}: ${stringify(val.value1, depth + 1)}`;
-        const second = `${getIndent(depth)}+ ${val.name}: ${stringify(val.value2, depth + 1)}`;
-        return `${first}\n${second}`;
-      }
-      return `${getIndent(depth)}  ${val.name}: ${stringify(val.value, depth + 1)}`;
     });
-    const result = ['{', ...lines, `${lastIndent}}`].join('\n');
-    return result;
+    return ['{', ...lines, `${lastIndent}}`].join('\n');
   };
   return iter(tree, 1);
 };
