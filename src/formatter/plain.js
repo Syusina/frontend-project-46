@@ -14,19 +14,18 @@ const checkUnnested = (node) => {
 const plain = (value) => {
   const iter = (tree, format) => {
     const result = tree.flatMap((val) => {
-      if (val.type === 'nested') {
-        return iter(val.children, `${format}${val.name}.`);
+      switch (val.type) {
+        case 'nested':
+          return iter(val.children, `${format}${val.name}.`);
+        case 'added':
+          return `Property '${format}${val.name}' was added with value: ${checkUnnested(val.value)}`;
+        case 'removed':
+          return `Property '${format}${val.name}' was removed`;
+        case 'update':
+          return `Property '${format}${val.name}' was updated. From ${checkUnnested(val.value1)} to ${checkUnnested(val.value2)}`;
+        default:
+          return [];
       }
-      if (val.type === 'added') {
-        return `Property '${format}${val.name}' was added with value: ${checkUnnested(val.value)}`;
-      }
-      if (val.type === 'removed') {
-        return `Property '${format}${val.name}' was removed`;
-      }
-      if (val.type === 'update') {
-        return `Property '${format}${val.name}' was updated. From ${checkUnnested(val.value1)} to ${checkUnnested(val.value2)}`;
-      }
-      return [];
     });
     return result.join('\n');
   };

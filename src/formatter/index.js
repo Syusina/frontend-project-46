@@ -8,7 +8,10 @@ const checkFormat = (tree, format) => {
   if (format === 'plain') {
     return plain(tree);
   }
-  return stylish(tree);
+  if (format === 'stylish') {
+    return stylish(tree);
+  }
+  return 'Type is not supported';
 };
 
 export default checkFormat;

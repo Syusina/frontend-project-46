@@ -7,7 +7,7 @@ const parser = (content, format) => {
   if (format === '.yml' || format === '.yaml') {
     return yaml.load(content);
   }
-  return 'Format not supported';
+  return 'Type is not supported';
 };
 
 export default parser;

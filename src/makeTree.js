@@ -14,8 +14,8 @@ const makeTree = (file1, file2) => {
       return { type: 'removed', name: key, value: file1[key] };
     }
     if (!_.isEqual(file1[key], file2[key])) {
-      return { 
-        type: 'update', name: key, value1: file1[key], value2: file2[key] 
+      return {
+        type: 'update', name: key, value1: file1[key], value2: file2[key],
       };
     }
     return { type: 'unchange', name: key, value: file1[key] };
