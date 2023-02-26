@@ -89,4 +89,4 @@ common: {
 <a href="https://asciinema.org/a/yx6Js6AQMhaM6s9YblLUYnkM5" target="_blank"><img src="https://asciinema.org/a/yx6Js6AQMhaM6s9YblLUYnkM5.svg" /></a>
 
 <h3>JSON:</h3>
-[![asciicast](https://asciinema.org/a/IfivgJG6J2dlLS7W3mozEKDJZ.svg)](https://asciinema.org/a/IfivgJG6J2dlLS7W3mozEKDJZ)
+<a href="https://asciinema.org/a/IfivgJG6J2dlLS7W3mozEKDJZ" target="_blank"><img src="https://asciinema.org/a/IfivgJG6J2dlLS7W3mozEKDJZ.svg" /></a>

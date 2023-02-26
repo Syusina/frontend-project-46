@@ -16,13 +16,12 @@ const stylish = (tree) => {
   const iter = (currentValue, depth) => {
     const lastIndent = depth === 1 ? '' : `${getIndent(depth - 1)}  `;
     const arrValue = Object.values(currentValue);
-    
-    console.log(arrValue);
-
     const lines = arrValue.map((val) => {
       const firstIdent = getIndent(depth);
-      const { type, name, value, value1, value2, children } = val;
-      
+      const {
+        type, name, value, value1, value2, children,
+      } = val;
+
       switch (type) {
         case 'nested':
           return `${firstIdent}  ${name}: ${iter(children, depth + 1)}`;
