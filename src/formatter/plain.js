@@ -8,7 +8,7 @@ const checkUnnested = (node) => {
   if (typeof (node) === 'string') {
     return `'${node}'`;
   }
-  return node;
+  return String(node);
 };
 
 const plain = (value) => {
