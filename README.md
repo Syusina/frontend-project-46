@@ -51,7 +51,7 @@ Options:
   - Plain format
  
   ```
-node gendiff --format plain ../__fixtures__/file1.yml ../__fixtures__/file2.yml
+node gendiff --format plain ../__fixtures__/file1.yaml ../__fixtures__/file2.yml
 Property 'common.follow' was added with value: false
 Property 'common.setting2' was removed
 Property 'common.setting3' was updated. From true to null
